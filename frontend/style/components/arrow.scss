@@ -1,0 +1,32 @@
+.arrow {
+  &__item {
+    width: 58px;
+    height: 58px;
+    background-color: #000000;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 19px 13px;
+    transition: .4s ease-in-out;
+    cursor: pointer;
+
+    &--prev {
+      background-image: url("../assets/icon/arrow-left.svg");
+    }
+
+    &--next {
+      background-image: url("../assets/icon/arrow-right.svg");
+    }
+
+    &:hover {
+      background-color: #F25322;
+
+      &.arrow__item--prev {
+        background-image: url("../assets/icon/arrow-left-black.svg");
+      }
+
+      &.arrow__item--next {
+        background-image: url("../assets/icon/arrow-right-black.svg");
+      }
+    }
+  }
+}

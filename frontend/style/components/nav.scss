@@ -1,0 +1,157 @@
+.nav {
+  overflow: unset;
+
+  &__item {
+    cursor: pointer;
+    position: relative;
+    opacity: 0;
+    pointer-events: none;
+
+    &.swiper-slide-visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    &.swiper-slide-thumb-active {
+      pointer-events: none;
+
+      &:before {
+        opacity: 1;
+      }
+
+      .nav {
+
+        &__icon {
+          &:before {
+            transform: scale(1.37) translateY(8px);
+
+            @include breakpoint-down('deskS') {
+              transform: scale(1.2) translateY(8px);
+            }
+          }
+        }
+
+        &__name {
+          opacity: 0;
+        }
+      }
+    }
+
+    &:hover {
+
+      .nav {
+
+        &__icon {
+          &:before {
+            transform: scale(1.37) translateY(8px);
+
+            @include breakpoint-down('deskS') {
+              transform: scale(1.2) translateY(8px);
+            }
+          }
+        }
+
+        &__name {
+          opacity: 0;
+        }
+      }
+    }
+
+    &:before {
+      content: '';
+      background: #F25322;
+      filter: blur(40px);
+      position: absolute;
+      width: 66px;
+      height: 66px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: .4s ease-in-out;
+      opacity: 0;
+
+      @include breakpoint-down('deskS') {
+        width: 44px;
+        height: 44px;
+      }
+    }
+  }
+
+  &__icon {
+    width: 90px;
+    height: 70px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+
+    @include breakpoint-down('deskS') {
+      width: 65px;
+      height: 50px;
+    }
+
+    &:before {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      content: "";
+      background: no-repeat center;
+      background-size: contain;
+      transition: .4s ease-in-out;
+      will-change: transform;
+    }
+
+    &--ussr {
+      &:before {
+        background-image: url(../assets/flags/ussr_small.png);
+      }
+    }
+
+    &--usa {
+      &:before {
+        background-image: url(../assets/flags/usa_small.png);
+      }
+    }
+
+    &--uk {
+      &:before {
+        background-image: url(../assets/flags/uk_small.png);
+      }
+    }
+
+    &--france {
+      &:before {
+        background-image: url(../assets/flags/france_small.png);
+      }
+    }
+
+    &--germany {
+      &:before {
+        background-image: url(../assets/flags/germany_small.png);
+      }
+    }
+
+    &--czec {
+      &:before {
+        background-image: url(../assets/flags/czec_small.png);
+      }
+    }
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgba(249, 245, 225, 0.5);
+    margin-top: 5px;
+    transition: .4s ease-in-out;
+
+    @include breakpoint-down('deskS') {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+}

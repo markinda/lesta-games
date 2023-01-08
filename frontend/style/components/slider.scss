@@ -1,0 +1,173 @@
+.slider {
+  background-color: $dark;
+  min-height: 886px;
+  position: relative;
+
+  @include breakpoint-down('tabM') {
+    min-height: 771px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    max-width: 1920px;
+    height: 704px;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url("../assets/fons/bg-nation-d.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right -17px;
+
+    @include breakpoint-down('deskM') {
+      min-width: 688px;
+      background-size: 100%;
+      background-position: center;
+      bottom: 100px;
+    }
+
+    @include breakpoint-down('tabM') {
+      bottom: -12px;
+      min-width: 0;
+      width: 100%;
+      background-size: 688px;
+    }
+  }
+
+  &:after {
+    content: '';
+    max-width: 866px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(133.28deg, #000000 0.39%, rgba(0, 0, 0, 0) 53.09%);
+
+    @include breakpoint-down('deskM') {
+      max-width: none;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    padding: 61px 0 0;
+
+    @include breakpoint-down('deskS') {
+      padding-top: 27px;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 85px;
+    line-height: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white0;
+    margin-bottom: 111px;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint-down('deskS') {
+      font-size: 40px;
+      line-height: 37px;
+      margin-bottom: 21px;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    max-width: 553px;
+    margin-left: 98px;
+    margin-bottom: 72px;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint-down('deskM') {
+      margin: 0 auto;
+      padding: 0 15px;
+      max-width: none;
+    }
+  }
+
+  &__content-title {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 47px;
+    text-transform: uppercase;
+    color: $white0;
+    margin-bottom: 18px;
+
+    @include breakpoint-down('deskM') {
+      text-align: center;
+    }
+
+    @include breakpoint-down('deskS') {
+      font-size: 18px;
+      line-height: 21px;
+      margin-bottom: 11px;
+    }
+  }
+
+  &__content-subtitle {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 27px;
+    text-transform: uppercase;
+    color: $white0-5;
+    max-width: 257px;
+    width: 100%;
+    margin-bottom: 67px;
+
+    @include breakpoint-down('deskM') {
+      text-align: center;
+      max-width: none;
+    }
+
+    @include breakpoint-down('deskS') {
+      font-size: 12px;
+      line-height: 19px;
+      width: 193px;
+      margin: 0 auto 25px;
+    }
+  }
+
+  &__nav  {
+    margin: 0 auto;
+    max-width: 1165px;
+    position: relative;
+
+    .arrow--next {
+      z-index: 1;
+      position: absolute;
+      top: 47%;
+      right: -54px;
+    }
+
+    .arrow--prev {
+      z-index: 1;
+      position: absolute;
+      top: 47%;
+      left: -40px;
+    }
+
+    .arrow {
+      @include breakpoint-down('deskS') {
+        display: none;
+      }
+    }
+
+    &-container {
+      overflow: hidden;
+      padding: 70px 70px 35px;
+
+      @include breakpoint-down('deskS') {
+        padding: 28px 15px 28px;
+      }
+    }
+  }
+}
